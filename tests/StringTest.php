@@ -10,7 +10,6 @@ namespace Wuzzitor\StringUtil;
  */
 class StringTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
      * Ensures that startsWith() returns true if the string starts with the given
      * prefix.
@@ -23,7 +22,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Ensures that startsWith() returns false if the string does not start with
-     * the prefix but contains it.
+     * the prefix, but contains it.
      */
     public function testStartsWithReturnsFalseIfTheStringOnlyContainsThePrefix()
     {
@@ -61,7 +60,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Ensures that endsWith() returns false if the string does not end with the
-     * given suffix but contains it.
+     * given suffix, but contains it.
      */
     public function testEndsWithReturnsFalseIfTheStringOnlyContainsTheSuffix()
     {
@@ -196,7 +195,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Ensures that removePrefix() does not modify the string if it does not
-     * start with the prefix but contains it.
+     * start with the prefix, but contains it.
      */
     public function testRemovePrefixDoesNotModifyStringIfItOnlyContainsPrefix()
     {
@@ -224,7 +223,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Ensures that removeSuffix() does not modify the string if it does not
-     * end with the suffix but contains it.
+     * end with the suffix, but contains it.
      */
     public function testRemoveSuffixDoesNotModifyStringIfItOnlyContainsSuffix()
     {
@@ -253,7 +252,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests signature replace(string, array(string), string):
+     * Tests signature replace(string, string[], string):
      * Checks if replace() replaces all search strings by the provided value.
      */
     public function testReplaceReplacesListOfSearchStringsByReplaceValue()
@@ -263,7 +262,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests signature replace(string, array(string=>string)):
+     * Tests signature replace(string, array<string, string>):
      * Checks if replace() applies the mapping of search/replace pairs to the string.
      */
     public function testReplaceAppliesMappingIfAssociativeArrayIsProvided()
@@ -275,5 +274,4 @@ class StringTest extends \PHPUnit_Framework_TestCase
         $result  = String::replace('hello world', $mapping);
         $this->assertEquals('welcome home', $result);
     }
-
 }
