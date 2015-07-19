@@ -1,6 +1,6 @@
 <?php
 
-namespace Wuzzitor\StringUtil;
+namespace Wuzzitor;
 
 /**
  * Tests the string helper class.
@@ -8,7 +8,7 @@ namespace Wuzzitor\StringUtil;
  * @author Matthias Molitor <matthias@matthimatiker.de>
  * @since 21.06.2012
  */
-class StringTest extends \PHPUnit_Framework_TestCase
+class StringUtilTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Ensures that startsWith() returns true if the string starts with the given
@@ -16,7 +16,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testStartsWithReturnsTrueIfTheStringStartsWithTheProvidedPrefix()
     {
-        $result = String::startsWith('this is a test string', 'this');
+        $result = StringUtil::startsWith('this is a test string', 'this');
         $this->assertTrue($result);
     }
 
@@ -26,7 +26,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testStartsWithReturnsFalseIfTheStringOnlyContainsThePrefix()
     {
-        $result = String::startsWith('this is a test string', 'test');
+        $result = StringUtil::startsWith('this is a test string', 'test');
         $this->assertFalse($result);
     }
 
@@ -35,7 +35,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testStartsWithReturnsFalseIfTheStringDoesNotContainThePrefix()
     {
-        $result = String::startsWith('this is a test string', 'demo');
+        $result = StringUtil::startsWith('this is a test string', 'demo');
         $this->assertFalse($result);
     }
 
@@ -45,7 +45,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testStartsWithReturnsFalseIfStringEqualsFirstPartOfPrefix()
     {
-        $result = String::startsWith('test', 'testprefix');
+        $result = StringUtil::startsWith('test', 'testprefix');
         $this->assertFalse($result);
     }
 
@@ -54,7 +54,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testEndsWithReturnsTrueIfTheStringEndsWithTheProvidedSuffix()
     {
-        $result = String::endsWith('this is a test string', 'string');
+        $result = StringUtil::endsWith('this is a test string', 'string');
         $this->assertTrue($result);
     }
 
@@ -64,7 +64,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testEndsWithReturnsFalseIfTheStringOnlyContainsTheSuffix()
     {
-        $result = String::endsWith('this is a test string', 'test');
+        $result = StringUtil::endsWith('this is a test string', 'test');
         $this->assertFalse($result);
     }
 
@@ -74,7 +74,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testEndsWithReturnsFalseIfTheStringDoesNotContainTheSuffix()
     {
-        $result = String::endsWith('this is a test string', 'demo');
+        $result = StringUtil::endsWith('this is a test string', 'demo');
         $this->assertFalse($result);
     }
 
@@ -84,7 +84,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testContainsReturnsFalseIfStringDoesNotContainNeedle()
     {
-        $result = String::contains('abc', 'd');
+        $result = StringUtil::contains('abc', 'd');
         $this->assertFalse($result);
     }
 
@@ -93,7 +93,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testContainsReturnsTrueIfStringContainsNeedle()
     {
-        $result = String::contains('abc', 'b');
+        $result = StringUtil::contains('abc', 'b');
         $this->assertTrue($result);
     }
 
@@ -102,7 +102,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testContainsReturnsTrueIfStringEqualsNeedle()
     {
-        $result = String::contains('abc', 'abc');
+        $result = StringUtil::contains('abc', 'abc');
         $this->assertTrue($result);
     }
 
@@ -113,7 +113,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testContainsSearchesForProvidedDigits()
     {
-        $result = String::contains('123', 2);
+        $result = StringUtil::contains('123', 2);
         $this->assertTrue($result);
     }
 
@@ -123,7 +123,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testContainsAnyReturnsTrueIfStringContainsAtLeastOneOfTheNeedles()
     {
-        $result = String::containsAny('abc', array('d', 'a'));
+        $result = StringUtil::containsAny('abc', array('d', 'a'));
         $this->assertTrue($result);
     }
 
@@ -133,7 +133,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testContainsAnyReturnsFalseIfStringContainsNoneOfTheNeedles()
     {
-        $result = String::containsAny('abc', array('d', 'f'));
+        $result = StringUtil::containsAny('abc', array('d', 'f'));
         $this->assertFalse($result);
     }
 
@@ -142,7 +142,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testContainsAnyReturnsTrueIfListOfNeedlesIsEmpty()
     {
-        $result = String::containsAny('abc', array());
+        $result = StringUtil::containsAny('abc', array());
         $this->assertTrue($result);
     }
 
@@ -152,7 +152,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testContainsAllReturnsTrueIfStringContainsAllNeedles()
     {
-        $result = String::containsAll('abc', array('a', 'c'));
+        $result = StringUtil::containsAll('abc', array('a', 'c'));
         $this->assertTrue($result);
     }
 
@@ -162,7 +162,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testContainsAllReturnsFalseIfStringContainsOnlySomeOfTheNeedles()
     {
-        $result = String::containsAll('abc', array('a', 'd', 'c'));
+        $result = StringUtil::containsAll('abc', array('a', 'd', 'c'));
         $this->assertFalse($result);
     }
 
@@ -171,7 +171,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testContainsAllReturnsTrueIfListOfNeedlesIsEmpty()
     {
-        $result = String::containsAll('abc', array());
+        $result = StringUtil::containsAll('abc', array());
         $this->assertTrue($result);
     }
 
@@ -180,7 +180,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testRemovePrefixRemovesProvidedPrefix()
     {
-        $result = String::removePrefix('this is a test string', 'this ');
+        $result = StringUtil::removePrefix('this is a test string', 'this ');
         $this->assertEquals('is a test string', $result);
     }
 
@@ -189,7 +189,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testRemovePrefixRemovesPrefixOnlyOnce()
     {
-        $result = String::removePrefix('testtestdemo', 'test');
+        $result = StringUtil::removePrefix('testtestdemo', 'test');
         $this->assertEquals('testdemo', $result);
     }
 
@@ -199,7 +199,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testRemovePrefixDoesNotModifyStringIfItOnlyContainsPrefix()
     {
-        $result = String::removePrefix('this is a test string', 'test ');
+        $result = StringUtil::removePrefix('this is a test string', 'test ');
         $this->assertEquals('this is a test string', $result);
     }
 
@@ -208,7 +208,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testRemoveSuffixRemovesProvidedSuffix()
     {
-        $result = String::removeSuffix('this is a test string', ' string');
+        $result = StringUtil::removeSuffix('this is a test string', ' string');
         $this->assertEquals('this is a test', $result);
     }
 
@@ -217,7 +217,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testRemoveSuffixRemovesSuffixOnlyOnce()
     {
-        $result = String::removeSuffix('demotesttest', 'test');
+        $result = StringUtil::removeSuffix('demotesttest', 'test');
         $this->assertEquals('demotest', $result);
     }
 
@@ -227,7 +227,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testRemoveSuffixDoesNotModifyStringIfItOnlyContainsSuffix()
     {
-        $result = String::removeSuffix('this is a test string', 'test');
+        $result = StringUtil::removeSuffix('this is a test string', 'test');
         $this->assertEquals('this is a test string', $result);
     }
 
@@ -237,7 +237,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testReplaceDoesNotModifyStringIfItDoesNotContainSearchString()
     {
-        $result = String::replace('hello world', 'foo', 'bar');
+        $result = StringUtil::replace('hello world', 'foo', 'bar');
         $this->assertEquals('hello world', $result);
     }
 
@@ -247,7 +247,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testReplaceReplacesSingleSearchStringByReplaceValue()
     {
-        $result = String::replace('hello world', 'hello', 'bye');
+        $result = StringUtil::replace('hello world', 'hello', 'bye');
         $this->assertEquals('bye world', $result);
     }
 
@@ -257,7 +257,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testReplaceReplacesListOfSearchStringsByReplaceValue()
     {
-        $result = String::replace('hello world', array('hello', 'world'), 'dummy');
+        $result = StringUtil::replace('hello world', array('hello', 'world'), 'dummy');
         $this->assertEquals('dummy dummy', $result);
     }
 
@@ -271,7 +271,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
                 'hello' => 'welcome',
                 'world' => 'home'
         );
-        $result  = String::replace('hello world', $mapping);
+        $result  = StringUtil::replace('hello world', $mapping);
         $this->assertEquals('welcome home', $result);
     }
 }

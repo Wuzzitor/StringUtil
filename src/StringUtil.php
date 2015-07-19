@@ -1,6 +1,6 @@
 <?php
 
-namespace Wuzzitor\StringUtil;
+namespace Wuzzitor;
 
 /**
  * Contains helper methods for string handling.
@@ -15,7 +15,7 @@ namespace Wuzzitor\StringUtil;
  * @author Matthias Molitor <matthias@matthimatiker.de>
  * @since 21.06.2012
  */
-class String
+class StringUtil
 {
     /**
      * Checks if the string starts with the provided prefix.
