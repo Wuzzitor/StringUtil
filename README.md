@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/Wuzzitor/StringUtil.svg?branch=master)](https://travis-ci.org/Wuzzitor/StringUtil)
 
-## Introduction ##
+## Overview ##
 
 This library provides a consistent, self-explaining layer to accomplish string related tasks.
 
