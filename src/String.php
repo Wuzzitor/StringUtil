@@ -17,7 +17,6 @@ namespace Wuzzitor\StringUtil;
  */
 class String
 {
-
     /**
      * Checks if the string starts with the provided prefix.
      *
@@ -180,5 +179,4 @@ class String
         }
         return str_replace($search, $replace, $subject);
     }
-
 }
