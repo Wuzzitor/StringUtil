@@ -1,6 +1,6 @@
 {
     "name": "wuzzitor/string-util",
-    "description": "Provides a consistent, self-explaining layer to accomplish string related tasks.",
+    "description": "Provides a consistent, self-explaining layer to accomplish common string operations.",
     "minimum-stability": "stable",
     "license": "MIT",
     "authors": [
