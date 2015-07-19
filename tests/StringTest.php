@@ -1,18 +1,5 @@
 <?php
 
-/**
- * StringTest
- *
- * @category PHP
- * @package Mol_Util
- * @subpackage Tests
- * @author Matthias Molitor <matthias@matthimatiker.de>
- * @copyright 2012 Matthias Molitor
- * @license http://www.opensource.org/licenses/BSD-3-Clause BSD License
- * @link https://github.com/Matthimatiker/MolComponents
- * @since 21.06.2012
- */
-
 namespace Wuzzitor\StringUtil;
 
 /**
