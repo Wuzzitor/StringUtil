@@ -8,9 +8,6 @@ namespace Wuzzitor\StringUtil;
  * This class contains lightweight helper methods that simplify string handling.
  * All operations are independent of the underlying charset of the subject string.
  *
- * If you need to perform actions that depend on the charset, then try to use
- * Mol_DataType_String as it includes charset handling.
- *
  * Hint:
  * The helper methods are static and require a string to operate on. That string
  * is called "subject" and its always the first argument in all methods.
