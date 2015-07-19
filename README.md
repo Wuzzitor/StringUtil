@@ -1,10 +1,40 @@
-# String #
+# StringUtil #
 
-[![Build Status](https://travis-ci.org/Wuzzitor/String.svg?branch=master)](https://travis-ci.org/Wuzzitor/String)
+[![Build Status](https://travis-ci.org/Wuzzitor/StringUtil.svg?branch=master)](https://travis-ci.org/Wuzzitor/StringUtil)
 
-## Motivation: Why does this project exist? ##
+## Introduction ##
+
+This library provides a consistent, self-explaining layer to accomplish string related tasks.
+
+Speaking method names make string operations more readable and reveal the intention clearly.
+Please compare the following, common snippets regarding readability:
+
+    // Native:
+    if (strpos($log, 'failure') !== false) {
+        // [...]
+    }
+
+    // With StringUtil:
+    if (String::contains($log, 'failure')) {
+        // [...]
+    }
+
+In contrast to the built-in PHP string functions, the library provides methods with consistent signatures,
+which always expect the subject string as first parameter.
+
+### Known Restrictions ###
+
+This library is meant for common, light-weight string operations.
+It is currently not designed for heavy, complex string tasks such as transparent charset handling.
 
 ## Installation ##
+
+Add the following to your composer.json (see [getcomposer.org](http://getcomposer.org/)):
+
+    "require" :  {
+        // ...
+        "wuzzitor/string-util": "~1.0"
+    }
 
 ## Concept ##
 
