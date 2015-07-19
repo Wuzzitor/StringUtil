@@ -136,7 +136,7 @@ class StringUtil
      *
      * replace(string, string, string):
      *
-     *     $result = String::replace('my string', 'search', 'replace');
+     *     $result = StringUtil::replace('my string', 'search', 'replace');
      *
      * Replaces all occurrences of "search" by "replace".
      *
@@ -146,7 +146,7 @@ class StringUtil
      *         'first',
      *         'seconds'
      *     );
-     *     $result = String::replace('my string', $needles, 'replace');
+     *     $result = StringUtil::replace('my string', $needles, 'replace');
      *
      * Replaces all strings that are contained in the $needles array by "replace".
      *
@@ -156,7 +156,7 @@ class StringUtil
      *         'first' => 'last',
      *         'hello' => 'world'
      *     );
-     *     $result = String::replace('my string', $mapping);
+     *     $result = StringUtil::replace('my string', $mapping);
      *
      * Expects an associative array that represents a mapping of strings
      * as argument.

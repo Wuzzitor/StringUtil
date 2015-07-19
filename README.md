@@ -15,7 +15,7 @@ Please compare the following, common snippets regarding readability:
     }
 
     // With StringUtil:
-    if (String::contains($log, 'failure')) {
+    if (StringUtil::contains($log, 'failure')) {
         // [...]
     }
 
@@ -38,7 +38,7 @@ Add the following to your composer.json (see [getcomposer.org](http://getcompose
 
 ## Concept ##
 
-The library provides a single class (``Wuzzitor\StringUtil\String``), whose static methods
+The library provides a single class (``Wuzzitor\StringUtil``), whose static methods
 are the entry points for all string operations.
 
 All methods are stateless to ensure full testability and to avoid code that is hard to debug. 
@@ -47,23 +47,23 @@ All methods are stateless to ensure full testability and to avoid code that is h
 
 Example:
 
-    use Wuzzitor\StringUtil\String;
+    use Wuzzitor\StringUtil;
     
     $filename = 'example.php';
-    $withoutExtension = String::removeSuffix($filename, '.php);
+    $withoutExtension = StringUtil::removeSuffix($filename, '.php);
     // $withoutExtension == 'example'
 
 The following signatures show all available operations:
 
-* ``String::startsWith(string $subject, string $prefix) : boolean``
-* ``String::endsWith(string $subject, string $suffix) : boolean``
-* ``String::contains(string $subject, string $needle) : boolean``
-* ``String::containsAny(string $subject, string[] $needles) : boolean``
-* ``String::containsAll(string $subject, string[] $needles) : boolean``
-* ``String::removePrefix(string $subject, string $prefix) : string``
-* ``String::removeSuffix(string $subject, string $suffix) : string``
-* ``String::replace(string $subject, string $search, string $replace) : string``
-* ``String::replace(string $subject, array<string, string> $searchReplaceMapping) : string``
+* ``StringUtil::startsWith(string $subject, string $prefix) : boolean``
+* ``StringUtil::endsWith(string $subject, string $suffix) : boolean``
+* ``StringUtil::contains(string $subject, string $needle) : boolean``
+* ``StringUtil::containsAny(string $subject, string[] $needles) : boolean``
+* ``StringUtil::containsAll(string $subject, string[] $needles) : boolean``
+* ``StringUtil::removePrefix(string $subject, string $prefix) : string``
+* ``StringUtil::removeSuffix(string $subject, string $suffix) : string``
+* ``StringUtil::replace(string $subject, string $search, string $replace) : string``
+* ``StringUtil::replace(string $subject, array<string, string> $searchReplaceMapping) : string``
 
 ## License ##
 
