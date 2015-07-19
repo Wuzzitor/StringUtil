@@ -10,7 +10,7 @@ namespace Wuzzitor\StringUtil;
  *
  * Hint:
  * The helper methods are static and require a string to operate on. That string
- * is called "subject" and its always the first argument in all methods.
+ * is called "subject" and it is always the first argument in all methods.
  *
  * @author Matthias Molitor <matthias@matthimatiker.de>
  * @since 21.06.2012
