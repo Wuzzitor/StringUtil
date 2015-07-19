@@ -58,7 +58,7 @@ class String
      * Checks if the string contains any of the provided needles.
      *
      * @param string $subject The tested string.
-     * @param array(string) $needles
+     * @param string[] $needles
      * @return boolean True if the string contains a needle, false otherwise.
      */
     public static function containsAny($subject, array $needles)
@@ -79,7 +79,7 @@ class String
      * Checks if the string contains all of the provided needles.
      *
      * @param string $subject The tested string.
-     * @param array(string) $needles
+     * @param string[] $needles
      * @return boolean True if the string contains all needles, false otherwise.
      */
     public static function containsAll($subject, array $needles)
@@ -136,37 +136,37 @@ class String
      *
      * replace(string, string, string):
      *
-     *     $result = Mol_Util_String::replace('my string', 'search', 'replace');
+     *     $result = String::replace('my string', 'search', 'replace');
      *
      * Replaces all occurrences of "search" by "replace".
      *
-     * replace(string, array(string), string):
+     * replace(string,string[], string):
      *
      *     $needles = array(
      *         'first',
      *         'seconds'
      *     );
-     *     $result = Mol_Util_String::replace('my string', $needles, 'replace');
+     *     $result = String::replace('my string', $needles, 'replace');
      *
-     * Replaces all string that are contained in the $needles array by "replace".
+     * Replaces all strings that are contained in the $needles array by "replace".
      *
-     * replace(string, array(string=>string)):
+     * replace(string, array<string, string>):
      *
      *     $mapping = array(
      *         'first' => 'last',
      *         'hello' => 'world'
      *     );
-     *     $result = Mol_Util_String::replace('my string', $mapping);
+     *     $result = String::replace('my string', $mapping);
      *
      * Expects an associative array that represents a mapping of strings
      * as argument.
      * The keys are replaced by the assigned values.
-     * In this example occurrences of "first" are replaced by "last" and
+     * In this example, occurrences of "first" are replaced by "last" and
      * "hello" is replaced by "world".
      *
      * @param string $subject
-     * @param string|array(integer|string=>string) $searchOrMapping
-     * @param string $replace
+     * @param string|string[]|array<string, string> $searchOrMapping
+     * @param string|null $replace
      * @return string The string with applied replacements.
      */
     public static function replace($subject, $searchOrMapping, $replace = null)
