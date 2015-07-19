@@ -38,7 +38,14 @@ Add the following to your composer.json (see [getcomposer.org](http://getcompose
 
 ## Concept ##
 
+The library provides a single class (``Wuzzitor\StringUtil\String``), whose static methods
+are the entry points for all string operations.
+
+All methods are stateless to ensure full testability and to avoid code that is hard to debug. 
+
 ## Usage ##
+
+use Wuzzitor\StringUtil\String;
 
 ## License ##
 
