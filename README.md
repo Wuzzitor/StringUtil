@@ -40,9 +40,6 @@ Add the following to your composer.json (see [getcomposer.org](http://getcompose
 
 ## Usage ##
 
-## Known Issues ##
-
-
 ## License ##
 
 Code released under [the MIT license](LICENSE).
