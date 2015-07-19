@@ -11,3 +11,8 @@
 ## Usage ##
 
 ## Known Issues ##
+
+
+## License ##
+
+Code released under [the MIT license](LICENSE).
