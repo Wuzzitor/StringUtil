@@ -45,7 +45,25 @@ All methods are stateless to ensure full testability and to avoid code that is h
 
 ## Usage ##
 
-use Wuzzitor\StringUtil\String;
+Example:
+
+    use Wuzzitor\StringUtil\String;
+    
+    $filename = 'example.php';
+    $withoutExtension = String::removeSuffix($filename, '.php);
+    // $withoutExtension == 'example'
+
+The following signatures show all available operations:
+
+* ``String::startsWith(string $subject, string $prefix) : boolean``
+* ``String::endsWith(string $subject, string $suffix) : boolean``
+* ``String::contains(string $subject, string $needle) : boolean``
+* ``String::containsAny(string $subject, string[] $needles) : boolean``
+* ``String::containsAll(string $subject, string[] $needles) : boolean``
+* ``String::removePrefix(string $subject, string $prefix) : string``
+* ``String::removeSuffix(string $subject, string $suffix) : string``
+* ``String::replace(string $subject, string $search, string $replace) : string``
+* ``String::replace(string $subject, array<string, string> $searchReplaceMapping) : string``
 
 ## License ##
 
